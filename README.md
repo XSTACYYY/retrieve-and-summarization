@@ -17,59 +17,48 @@ Researching on a broad topic can be quite difficult. With this model, anyone can
 
 ## How is it used?
 How It Is Used
+
+
 *Input your topic of choice in the model's search bar. 
+
+
 *In the next search bar, input how long you would like your summarization to be (from a range of 0 to 1).
+
+
 *The AI model will then retreive information from the top results and use deep learning techniques to give an effective summarization
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+![image](https://github.com/XSTACYYY/retrieve-and-summarization/assets/138307115/c679fe1f-5e57-412f-8be7-8a07a3357f98)
 
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
 
-This is how you create code examples:
-```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
+Code Demo:
+from googlesearch import search
+from bs4 import BeautifulSoup
+import requests
+import spacy
+from spacy.lang.en.stop_words import STOP_WORDS
+from string import punctuation
+from heapq import nlargest
 
-   totPop = sum(pop)
-   totFish = sum(fishers)
 
-   # write your solution here
+#This allows the user to input a search or query
+query = input("Enter the text to search: ")
 
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
-```
-
+#Summarization code
+-------------------------
 
 ## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
-
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+https://www.google.com/
 
 ## Challenges
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+*It does not give expertly detailed information - only a brief summary
+
+
+*Due to it still being a demo, summarizations may include more than one case of repitition
 
 ## What next?
-
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
-
+With further improvement, the model could include more domains, such as ones more credible for academic research. It could also become more effective in summarization to produce the best possible result
 
 ## Acknowledgments
-
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+SpaCy Summarization Technique: https://www.activestate.com/blog/how-to-do-text-summarization-with-python/
+Summarization Image Used: https://thecleverprogrammer.com/2020/12/31/text-summarization-with-python/
